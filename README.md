@@ -1,6 +1,6 @@
-# LTA-FAQ
+# Introducation to LTA
 
-Repository associated with paper:
+Repository associated with LTA-FAQ paper:
 
 "Ten Frequently Asked Questions About Latent Transition Analysis"
 
