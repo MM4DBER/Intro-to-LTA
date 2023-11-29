@@ -1,0 +1,26 @@
+TITLE:
+Class-1_Time2
+DATA:
+FILE = "/Users/agarber/github/Intro-to-LTA/enum_LCA_time2/t2.dat";
+ 
+VARIABLE:
+NAMES = AB39M AB39T AB39U AB39W AB39X GA33A GA33H GA33I GA33K GA33L ENGINEER MATHG7
+     MATHG8 MATHG10 MATHG11 MATHG12 FEMALE KA9B KA9C KA9D KA9G KA9K CPROB11 CPROB12
+     CPROB13 CPROB14 CMOD1 CASENUM COHORT SOCISS2 OPKNOW2 SIOK2 CPROB21 CPROB22
+     CPROB23 CPROB24 CMOD2; 
+ MISSING=.;
+ !!! NOTE CHANGE: List of the five 10th grade science attitude indicators !!!
+categorical = ga33a-ga33l; 
+     usevar = ga33a-ga33l;
+    
+classes = c(1);
+ANALYSIS:
+estimator = mlr; 
+      type = mixture;
+      starts = 500 100;
+      processors = 10;
+OUTPUT:
+sampstat residual tech11 tech14;
+PLOT:
+type = plot3; 
+      series = ga33a-ga33l(*);

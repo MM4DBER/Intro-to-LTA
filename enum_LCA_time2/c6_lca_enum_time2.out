@@ -1,0 +1,1392 @@
+Mplus VERSION 8.6 (Mac)
+MUTHEN & MUTHEN
+11/27/2023   9:12 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE:
+  Class-6_Time2
+  DATA:
+  FILE = "/Users/agarber/github/Intro-to-LTA/enum_LCA_time2/t2.dat";
+
+  VARIABLE:
+  NAMES = AB39M AB39T AB39U AB39W AB39X GA33A GA33H GA33I GA33K GA33L ENGINEER MATHG7
+       MATHG8 MATHG10 MATHG11 MATHG12 FEMALE KA9B KA9C KA9D KA9G KA9K CPROB11 CPROB12
+       CPROB13 CPROB14 CMOD1 CASENUM COHORT SOCISS2 OPKNOW2 SIOK2 CPROB21 CPROB22
+       CPROB23 CPROB24 CMOD2;
+   MISSING=.;
+   !!! NOTE CHANGE: List of the five 10th grade science attitude indicators !!!
+  categorical = ga33a-ga33l;
+       usevar = ga33a-ga33l;
+
+  classes = c(6);
+  ANALYSIS:
+  estimator = mlr;
+        type = mixture;
+        starts = 500 100;
+        processors = 10;
+  OUTPUT:
+  sampstat residual tech11 tech14;
+  PLOT:
+  type = plot3;
+        series = ga33a-ga33l(*);
+
+
+
+*** WARNING in OUTPUT command
+  SAMPSTAT option is not available when all outcomes are censored, ordered
+  categorical, unordered categorical (nominal), count or continuous-time
+  survival variables.  Request for SAMPSTAT is ignored.
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  865
+   2 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+
+Class-6_Time2
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        2227
+
+Number of dependent variables                                    5
+Number of independent variables                                  0
+Number of continuous latent variables                            0
+Number of categorical latent variables                           1
+
+Observed dependent variables
+
+  Binary and ordered categorical (ordinal)
+   GA33A       GA33H       GA33I       GA33K       GA33L
+
+Categorical latent variables
+   C
+
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Optimization Specifications for the Quasi-Newton Algorithm for
+Continuous Outcomes
+  Maximum number of iterations                                 100
+  Convergence criterion                                  0.100D-05
+Optimization Specifications for the EM Algorithm
+  Maximum number of iterations                                 500
+  Convergence criteria
+    Loglikelihood change                                 0.100D-06
+    Relative loglikelihood change                        0.100D-06
+    Derivative                                           0.100D-05
+Optimization Specifications for the M step of the EM Algorithm for
+Categorical Latent variables
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+Optimization Specifications for the M step of the EM Algorithm for
+Censored, Binary or Ordered Categorical (Ordinal), Unordered
+Categorical (Nominal) and Count Outcomes
+  Number of M step iterations                                    1
+  M step convergence criterion                           0.100D-05
+  Basis for M step termination                           ITERATION
+  Maximum value for logit thresholds                            15
+  Minimum value for logit thresholds                           -15
+  Minimum expected cell size for chi-square              0.100D-01
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Optimization algorithm                                         EMA
+Random Starts Specifications
+  Number of initial stage random starts                        500
+  Number of final stage optimizations                          100
+  Number of initial stage iterations                            10
+  Initial stage convergence criterion                    0.100D+01
+  Random starts scale                                    0.500D+01
+  Random seed for generating random starts                       0
+Link                                                         LOGIT
+
+Input data file(s)
+  /Users/agarber/github/Intro-to-LTA/enum_LCA_time2/t2.dat
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            12
+     Number of y missing data patterns           0
+     Number of u missing data patterns          12
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT FOR U
+
+
+           Covariance Coverage
+              GA33A         GA33H         GA33I         GA33K         GA33L
+              ________      ________      ________      ________      ________
+ GA33A          0.996
+ GA33H          0.987         0.990
+ GA33I          0.987         0.981         0.989
+ GA33K          0.988         0.982         0.981         0.991
+ GA33L          0.993         0.987         0.987         0.988         0.996
+
+
+UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
+
+    GA33A
+      Category 1    0.424          941.000
+      Category 2    0.576         1278.000
+    GA33H
+      Category 1    0.572         1261.000
+      Category 2    0.428          944.000
+    GA33I
+      Category 1    0.491         1082.000
+      Category 2    0.509         1121.000
+    GA33K
+      Category 1    0.579         1277.000
+      Category 2    0.421          930.000
+    GA33L
+      Category 1    0.584         1297.000
+      Category 2    0.416          922.000
+
+
+RANDOM STARTS RESULTS RANKED FROM THE BEST TO THE WORST LOGLIKELIHOOD VALUES
+
+Final stage loglikelihood values at local maxima, seeds, and initial stage start numbers:
+
+           -5877.072  667250           318
+           -5877.072  471438           252
+           -5877.073  533738           11
+           -5877.075  399380           436
+           -5877.075  259507           53
+           -5877.078  80438            246
+           -5877.082  107446           12
+           -5877.087  335485           496
+           -5877.088  407108           366
+           -5877.089  282464           283
+           -5877.089  59674            240
+           -5877.093  576596           99
+           -5877.097  691234           250
+           -5877.101  782200           84
+           -5877.101  227563           63
+           -5877.106  407168           44
+           -5877.106  636396           168
+           -5877.106  645664           39
+           -5877.115  576220           115
+           -5877.117  188498           258
+           -5877.122  514326           325
+           -5877.175  21132            351
+           -5877.186  283492           435
+           -5877.227  152496           123
+           -5877.277  692169           308
+
+75 perturbed starting value run(s) did not converge or were rejected in the third stage.
+
+
+
+THE BEST LOGLIKELIHOOD VALUE HAS BEEN REPLICATED.  RERUN WITH AT LEAST TWICE THE
+RANDOM STARTS TO CHECK THAT THE BEST LOGLIKELIHOOD IS STILL OBTAINED AND REPLICATED.
+
+     IN THE OPTIMIZATION, ONE OR MORE LOGIT THRESHOLDS APPROACHED EXTREME VALUES
+     OF -15.000 AND 15.000 AND WERE FIXED TO STABILIZE MODEL ESTIMATION.  THESE
+     VALUES IMPLY PROBABILITIES OF 0 AND 1.  IN THE MODEL RESULTS SECTION, THESE
+     PARAMETERS HAVE 0 STANDARD ERRORS AND 999 IN THE Z-SCORE AND P-VALUE COLUMNS.
+
+     THE STANDARD ERRORS OF THE MODEL PARAMETER ESTIMATES MAY NOT BE
+     TRUSTWORTHY FOR SOME PARAMETERS DUE TO A NON-POSITIVE DEFINITE
+     FIRST-ORDER DERIVATIVE PRODUCT MATRIX.  THIS MAY BE DUE TO THE STARTING
+     VALUES BUT MAY ALSO BE AN INDICATION OF MODEL NONIDENTIFICATION.  THE
+     CONDITION NUMBER IS       0.229D-16.  PROBLEM INVOLVING THE FOLLOWING PARAMETER:
+     Parameter 35, [ C#5 ]
+
+     ONE OR MORE PARAMETERS WERE FIXED TO AVOID SINGULARITY OF THE
+     INFORMATION MATRIX. THE SINGULARITY IS MOST LIKELY BECAUSE THE
+     MODEL IS NOT IDENTIFIED, OR BECAUSE OF EMPTY CELLS IN THE JOINT
+     DISTRIBUTION OF THE CATEGORICAL VARIABLES IN THE MODEL.
+     THE FOLLOWING PARAMETERS WERE FIXED:
+     Parameter 12, %C#3%: [ GA33H$1 ]
+
+
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+     THE DEGREES OF FREEDOM FOR THIS MODEL ARE NEGATIVE.  THE MODEL IS NOT
+     IDENTIFIED OR TOO MANY CELLS WERE DELETED.  A CHI-SQUARE TEST IS NOT
+     AVAILABLE.
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       35
+
+Loglikelihood
+
+          H0 Value                       -5877.072
+          H0 Scaling Correction Factor      0.8963
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                   11824.143
+          Bayesian (BIC)                 12023.937
+          Sample-Size Adjusted BIC       11912.737
+            (n* = (n + 2) / 24)
+
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THE ESTIMATED MODEL
+
+    Latent
+   Classes
+
+       1        153.32927          0.06885
+       2        171.49134          0.07701
+       3        786.43760          0.35314
+       4        214.55563          0.09634
+       5        186.64274          0.08381
+       6        714.54342          0.32085
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON ESTIMATED POSTERIOR PROBABILITIES
+
+    Latent
+   Classes
+
+       1        153.32927          0.06885
+       2        171.49134          0.07701
+       3        786.43760          0.35314
+       4        214.55563          0.09634
+       5        186.64274          0.08381
+       6        714.54342          0.32085
+
+
+FINAL CLASS COUNTS AND PROPORTIONS FOR THE LATENT CLASSES
+BASED ON THEIR MOST LIKELY LATENT CLASS MEMBERSHIP
+
+Class Counts and Proportions
+
+    Latent
+   Classes
+
+       1              117          0.05254
+       2              109          0.04894
+       3              887          0.39829
+       4              214          0.09609
+       5              130          0.05837
+       6              770          0.34576
+
+
+CLASSIFICATION QUALITY
+
+     Entropy                         0.727
+
+
+Average Latent Class Probabilities for Most Likely Latent Class Membership (Row)
+by Latent Class (Column)
+
+           1        2        3        4        5        6
+
+    1   0.608    0.048    0.076    0.001    0.203    0.065
+    2   0.073    0.761    0.034    0.002    0.039    0.090
+    3   0.018    0.052    0.852    0.001    0.077    0.000
+    4   0.063    0.051    0.085    0.751    0.007    0.042
+    5   0.167    0.147    0.000    0.000    0.644    0.042
+    6   0.029    0.009    0.000    0.069    0.006    0.886
+
+
+Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+           1        2        3        4        5        6
+
+    1   0.464    0.052    0.107    0.089    0.142    0.148
+    2   0.033    0.484    0.267    0.064    0.111    0.041
+    3   0.011    0.005    0.961    0.023    0.000    0.000
+    4   0.001    0.001    0.003    0.749    0.000    0.246
+    5   0.127    0.023    0.367    0.009    0.449    0.026
+    6   0.011    0.014    0.000    0.012    0.008    0.955
+
+
+Logits for the Classification Probabilities for the Most Likely Latent Class Membership (Column)
+by Latent Class (Row)
+
+              1        2        3        4        5        6
+
+    1      1.144   -1.051   -0.325   -0.511   -0.041    0.000
+    2     -0.224    2.464    1.870    0.436    0.993    0.000
+    3      9.327    8.464   13.776   10.052    1.171    0.000
+    4     -6.129   -5.302   -4.519    1.112  -12.415    0.000
+    5      1.585   -0.127    2.644   -1.115    2.847    0.000
+    6     -4.500   -4.242   -8.001   -4.336   -4.835    0.000
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Latent Class 1
+
+ Thresholds
+    GA33A$1           -0.583      0.381     -1.529      0.126
+    GA33H$1            1.913      2.409      0.794      0.427
+    GA33I$1            0.902      0.911      0.990      0.322
+    GA33K$1           -0.623      4.777     -0.130      0.896
+    GA33L$1           -1.017      3.498     -0.291      0.771
+
+Latent Class 2
+
+ Thresholds
+    GA33A$1            2.121     19.820      0.107      0.915
+    GA33H$1           -0.265      1.216     -0.218      0.828
+    GA33I$1           -1.078      1.629     -0.662      0.508
+    GA33K$1            1.084      0.408      2.659      0.008
+    GA33L$1            1.563      0.762      2.052      0.040
+
+Latent Class 3
+
+ Thresholds
+    GA33A$1            1.145      0.700      1.635      0.102
+    GA33H$1           12.515      0.000    999.000    999.000
+    GA33I$1            2.244      0.648      3.463      0.001
+    GA33K$1            2.889      0.343      8.421      0.000
+    GA33L$1           15.000      0.000    999.000    999.000
+
+Latent Class 4
+
+ Thresholds
+    GA33A$1           -6.235     61.400     -0.102      0.919
+    GA33H$1            0.262      0.776      0.338      0.735
+    GA33I$1          -15.000      0.000    999.000    999.000
+    GA33K$1            1.131      0.720      1.571      0.116
+    GA33L$1            0.820      0.810      1.012      0.311
+
+Latent Class 5
+
+ Thresholds
+    GA33A$1           -0.641      0.812     -0.790      0.430
+    GA33H$1            0.335      4.087      0.082      0.935
+    GA33I$1            4.251    142.131      0.030      0.976
+    GA33K$1            1.456      1.434      1.015      0.310
+    GA33L$1            0.915      1.127      0.812      0.417
+
+Latent Class 6
+
+ Thresholds
+    GA33A$1           -2.146      0.160    -13.386      0.000
+    GA33H$1           -2.598      0.415     -6.262      0.000
+    GA33I$1           -2.685      0.344     -7.815      0.000
+    GA33K$1           -2.610      0.587     -4.448      0.000
+    GA33L$1           -2.584      0.297     -8.706      0.000
+
+Categorical Latent Variables
+
+ Means
+    C#1               -1.539      3.454     -0.446      0.656
+    C#2               -1.427      2.351     -0.607      0.544
+    C#3                0.096      0.333      0.288      0.773
+    C#4               -1.203      1.302     -0.924      0.356
+    C#5               -1.342      5.237     -0.256      0.798
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.170E-07
+       (ratio of smallest to largest eigenvalue)
+
+
+RESULTS IN PROBABILITY SCALE
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Latent Class 1
+
+ GA33A
+    Category 1         0.358      0.088      4.089      0.000
+    Category 2         0.642      0.088      7.324      0.000
+ GA33H
+    Category 1         0.871      0.270      3.227      0.001
+    Category 2         0.129      0.270      0.476      0.634
+ GA33I
+    Category 1         0.711      0.187      3.804      0.000
+    Category 2         0.289      0.187      1.543      0.123
+ GA33K
+    Category 1         0.349      1.086      0.322      0.748
+    Category 2         0.651      1.086      0.600      0.549
+ GA33L
+    Category 1         0.266      0.682      0.389      0.697
+    Category 2         0.734      0.682      1.076      0.282
+
+Latent Class 2
+
+ GA33A
+    Category 1         0.893      1.895      0.471      0.638
+    Category 2         0.107      1.895      0.057      0.955
+ GA33H
+    Category 1         0.434      0.299      1.453      0.146
+    Category 2         0.566      0.299      1.894      0.058
+ GA33I
+    Category 1         0.254      0.309      0.823      0.410
+    Category 2         0.746      0.309      2.418      0.016
+ GA33K
+    Category 1         0.747      0.077      9.705      0.000
+    Category 2         0.253      0.077      3.284      0.001
+ GA33L
+    Category 1         0.827      0.109      7.580      0.000
+    Category 2         0.173      0.109      1.588      0.112
+
+Latent Class 3
+
+ GA33A
+    Category 1         0.759      0.128      5.916      0.000
+    Category 2         0.241      0.128      1.883      0.060
+ GA33H
+    Category 1         1.000      0.000      0.000      1.000
+    Category 2         0.000      0.000      0.000      1.000
+ GA33I
+    Category 1         0.904      0.056     16.101      0.000
+    Category 2         0.096      0.056      1.707      0.088
+ GA33K
+    Category 1         0.947      0.017     55.315      0.000
+    Category 2         0.053      0.017      3.077      0.002
+ GA33L
+    Category 1         1.000      0.000      0.000      1.000
+    Category 2         0.000      0.000      0.000      1.000
+
+Latent Class 4
+
+ GA33A
+    Category 1         0.002      0.120      0.016      0.987
+    Category 2         0.998      0.120      8.328      0.000
+ GA33H
+    Category 1         0.565      0.191      2.963      0.003
+    Category 2         0.435      0.191      2.279      0.023
+ GA33I
+    Category 1         0.000      0.000      0.000      1.000
+    Category 2         1.000      0.000      0.000      1.000
+ GA33K
+    Category 1         0.756      0.133      5.692      0.000
+    Category 2         0.244      0.133      1.836      0.066
+ GA33L
+    Category 1         0.694      0.172      4.038      0.000
+    Category 2         0.306      0.172      1.779      0.075
+
+Latent Class 5
+
+ GA33A
+    Category 1         0.345      0.183      1.880      0.060
+    Category 2         0.655      0.183      3.570      0.000
+ GA33H
+    Category 1         0.583      0.994      0.587      0.557
+    Category 2         0.417      0.994      0.420      0.675
+ GA33I
+    Category 1         0.986      1.968      0.501      0.616
+    Category 2         0.014      1.968      0.007      0.994
+ GA33K
+    Category 1         0.811      0.220      3.688      0.000
+    Category 2         0.189      0.220      0.860      0.390
+ GA33L
+    Category 1         0.714      0.230      3.103      0.002
+    Category 2         0.286      0.230      1.243      0.214
+
+Latent Class 6
+
+ GA33A
+    Category 1         0.105      0.015      6.965      0.000
+    Category 2         0.895      0.015     59.587      0.000
+ GA33H
+    Category 1         0.069      0.027      2.590      0.010
+    Category 2         0.931      0.027     34.789      0.000
+ GA33I
+    Category 1         0.064      0.021      3.109      0.002
+    Category 2         0.936      0.021     45.583      0.000
+ GA33K
+    Category 1         0.069      0.037      1.830      0.067
+    Category 2         0.931      0.037     24.876      0.000
+ GA33L
+    Category 1         0.070      0.019      3.624      0.000
+    Category 2         0.930      0.019     48.010      0.000
+
+
+LATENT CLASS INDICATOR ODDS RATIOS FOR THE LATENT CLASSES
+
+                                                95% C.I.
+                    Estimate       S.E.  Lower 2.5% Upper 2.5%
+
+Latent Class 1 Compared to Latent Class 2
+
+ GA33A
+    Category > 1      14.936    294.716      0.000  *********
+ GA33H
+    Category > 1       0.113      0.273      0.001     12.725
+ GA33I
+    Category > 1       0.138      0.246      0.004      4.560
+ GA33K
+    Category > 1       5.509     25.853      0.001  54432.176
+ GA33L
+    Category > 1      13.198     43.662      0.020   8641.562
+
+Latent Class 1 Compared to Latent Class 3
+
+ GA33A
+    Category > 1       5.627      3.554      1.632     19.401
+ GA33H
+    Category > 1   40193.918  96844.914    357.439  *********
+ GA33I
+    Category > 1       3.828      4.122      0.464     31.596
+ GA33K
+    Category > 1      33.510    163.648      0.002  *********
+ GA33L
+    Category > 1   *********      0.000  *********  *********
+
+Latent Class 1 Compared to Latent Class 4
+
+ GA33A
+    Category > 1       0.004      0.215      0.000  *********
+ GA33H
+    Category > 1       0.192      0.499      0.001     31.504
+ GA33I
+    Category > 1       0.000      0.000      0.000      0.000
+ GA33K
+    Category > 1       5.778     24.656      0.001  24793.570
+ GA33L
+    Category > 1       6.274     19.946      0.012   3188.219
+
+Latent Class 1 Compared to Latent Class 5
+
+ GA33A
+    Category > 1       0.943      0.979      0.123      7.218
+ GA33H
+    Category > 1       0.206      0.864      0.000    758.691
+ GA33I
+    Category > 1      28.486   4049.269      0.000  *********
+ GA33K
+    Category > 1       7.997     31.143      0.004  16510.455
+ GA33L
+    Category > 1       6.901     19.651      0.026   1831.218
+
+Latent Class 1 Compared to Latent Class 6
+
+ GA33A
+    Category > 1       0.209      0.084      0.095      0.462
+ GA33H
+    Category > 1       0.011      0.027      0.000      1.429
+ GA33I
+    Category > 1       0.028      0.027      0.004      0.182
+ GA33K
+    Category > 1       0.137      0.599      0.000    720.899
+ GA33L
+    Category > 1       0.209      0.720      0.000    181.490
+
+Latent Class 2 Compared to Latent Class 3
+
+ GA33A
+    Category > 1       0.377      7.357      0.000  *********
+ GA33H
+    Category > 1   *********  *********  32736.094  *********
+ GA33I
+    Category > 1      27.712     43.796      1.251    613.681
+ GA33K
+    Category > 1       6.083      3.316      2.090     17.706
+ GA33L
+    Category > 1   *********      0.000  *********  *********
+
+Latent Class 2 Compared to Latent Class 4
+
+ GA33A
+    Category > 1       0.000      0.018      0.000  *********
+ GA33H
+    Category > 1       1.694      2.272      0.122     23.486
+ GA33I
+    Category > 1       0.000      0.000      0.000      0.000
+ GA33K
+    Category > 1       1.049      0.677      0.296      3.715
+ GA33L
+    Category > 1       0.475      0.508      0.059      3.855
+
+Latent Class 2 Compared to Latent Class 5
+
+ GA33A
+    Category > 1       0.063      1.272      0.000  *********
+ GA33H
+    Category > 1       1.822      5.890      0.003   1027.791
+ GA33I
+    Category > 1     206.235  29429.096      0.000  *********
+ GA33K
+    Category > 1       1.452      2.037      0.093     22.707
+ GA33L
+    Category > 1       0.523      0.655      0.045      6.099
+
+Latent Class 2 Compared to Latent Class 6
+
+ GA33A
+    Category > 1       0.014      0.278      0.000  *********
+ GA33H
+    Category > 1       0.097      0.131      0.007      1.377
+ GA33I
+    Category > 1       0.200      0.330      0.008      5.074
+ GA33K
+    Category > 1       0.025      0.015      0.008      0.081
+ GA33L
+    Category > 1       0.016      0.012      0.003      0.074
+
+Latent Class 3 Compared to Latent Class 4
+
+ GA33A
+    Category > 1       0.001      0.038      0.000  *********
+ GA33H
+    Category > 1       0.000      0.000      0.000      0.000
+ GA33I
+    Category > 1       0.000      0.000      0.000      0.000
+ GA33K
+    Category > 1       0.172      0.142      0.034      0.867
+ GA33L
+    Category > 1       0.000      0.000      0.000      0.000
+
+Latent Class 3 Compared to Latent Class 5
+
+ GA33A
+    Category > 1       0.168      0.229      0.012      2.430
+ GA33H
+    Category > 1       0.000      0.000      0.000      0.015
+ GA33I
+    Category > 1       7.442   1060.666      0.000  *********
+ GA33K
+    Category > 1       0.239      0.361      0.012      4.620
+ GA33L
+    Category > 1       0.000      0.000      0.000      0.000
+
+Latent Class 3 Compared to Latent Class 6
+
+ GA33A
+    Category > 1       0.037      0.027      0.009      0.152
+ GA33H
+    Category > 1       0.000      0.000      0.000      0.000
+ GA33I
+    Category > 1       0.007      0.005      0.002      0.029
+ GA33K
+    Category > 1       0.004      0.003      0.001      0.018
+ GA33L
+    Category > 1       0.000      0.000      0.000      0.000
+
+Latent Class 4 Compared to Latent Class 5
+
+ GA33A
+    Category > 1     268.708  16531.516      0.000  *********
+ GA33H
+    Category > 1       1.076      4.315      0.000   2793.251
+ GA33I
+    Category > 1   *********  *********      0.000  *********
+ GA33K
+    Category > 1       1.384      1.465      0.174     11.018
+ GA33L
+    Category > 1       1.100      0.767      0.281      4.311
+
+Latent Class 4 Compared to Latent Class 6
+
+ GA33A
+    Category > 1      59.654   3662.958      0.000  *********
+ GA33H
+    Category > 1       0.057      0.050      0.010      0.320
+ GA33I
+    Category > 1   *********      0.000  *********  *********
+ GA33K
+    Category > 1       0.024      0.013      0.008      0.068
+ GA33L
+    Category > 1       0.033      0.027      0.007      0.166
+
+Latent Class 5 Compared to Latent Class 6
+
+ GA33A
+    Category > 1       0.222      0.185      0.044      1.133
+ GA33H
+    Category > 1       0.053      0.226      0.000    218.471
+ GA33I
+    Category > 1       0.001      0.138      0.000  *********
+ GA33K
+    Category > 1       0.017      0.020      0.002      0.163
+ GA33L
+    Category > 1       0.030      0.034      0.003      0.282
+
+
+RESIDUAL OUTPUT
+
+
+     UNIVARIATE DISTRIBUTION FIT FOR CLASS 1
+
+     Variable          Observed      Estimated      Residual (Obs.-Est.)    Stand. Residual
+     GA33A
+       Category 1        0.358          0.358                  0.000                0.000
+       Category 2        0.642          0.642                  0.000                0.000
+     GA33H
+       Category 1        0.871          0.871                  0.000                0.000
+       Category 2        0.129          0.129                  0.000                0.000
+     GA33I
+       Category 1        0.711          0.711                  0.000                0.000
+       Category 2        0.289          0.289                  0.000                0.000
+     GA33K
+       Category 1        0.349          0.349                  0.000                0.000
+       Category 2        0.651          0.651                  0.000                0.000
+     GA33L
+       Category 1        0.266          0.266                  0.000                0.000
+       Category 2        0.734          0.734                  0.000                0.000
+
+
+     BIVARIATE DISTRIBUTIONS FIT FOR CLASS 1
+
+     Variable       Variable          Observed     Estimated    Residual (Obs.-Est.)  Stand. Residual
+     GA33A          GA33H
+       Category 1     Category 1        0.309       0.312            -0.003           -0.079
+       Category 1     Category 2        0.046       0.046             0.000           -0.017
+       Category 2     Category 1        0.562       0.559             0.003            0.067
+       Category 2     Category 2        0.083       0.083             0.001            0.024
+     GA33A          GA33I
+       Category 1     Category 1        0.256       0.255             0.001            0.036
+       Category 1     Category 2        0.103       0.103             0.000            0.002
+       Category 2     Category 1        0.456       0.456             0.000           -0.009
+       Category 2     Category 2        0.184       0.185            -0.001           -0.031
+     GA33A          GA33K
+       Category 1     Category 1        0.125       0.125            -0.001           -0.021
+       Category 1     Category 2        0.232       0.233            -0.001           -0.039
+       Category 2     Category 1        0.226       0.224             0.001            0.044
+       Category 2     Category 2        0.418       0.418             0.000            0.009
+     GA33A          GA33L
+       Category 1     Category 1        0.094       0.095            -0.001           -0.049
+       Category 1     Category 2        0.264       0.263             0.001            0.014
+       Category 2     Category 1        0.169       0.170            -0.002           -0.051
+       Category 2     Category 2        0.473       0.471             0.002            0.055
+     GA33H          GA33I
+       Category 1     Category 1        0.621       0.620             0.001            0.029
+       Category 1     Category 2        0.251       0.252             0.000           -0.014
+       Category 2     Category 1        0.091       0.091             0.000           -0.015
+       Category 2     Category 2        0.037       0.037             0.000           -0.019
+     GA33H          GA33K
+       Category 1     Category 1        0.304       0.304            -0.001           -0.017
+       Category 1     Category 2        0.569       0.567             0.001            0.036
+       Category 2     Category 1        0.044       0.045             0.000           -0.025
+       Category 2     Category 2        0.083       0.084             0.000           -0.017
+     GA33H          GA33L
+       Category 1     Category 1        0.232       0.231             0.000            0.008
+       Category 1     Category 2        0.642       0.640             0.002            0.048
+       Category 2     Category 1        0.034       0.034            -0.001           -0.041
+       Category 2     Category 2        0.093       0.094            -0.002           -0.064
+     GA33I          GA33K
+       Category 1     Category 1        0.248       0.248            -0.001           -0.022
+       Category 1     Category 2        0.463       0.463             0.000           -0.004
+       Category 2     Category 1        0.101       0.101             0.000            0.007
+       Category 2     Category 2        0.189       0.188             0.001            0.025
+     GA33I          GA33L
+       Category 1     Category 1        0.189       0.189             0.000            0.013
+       Category 1     Category 2        0.521       0.522            -0.001           -0.027
+       Category 2     Category 1        0.077       0.077             0.000            0.020
+       Category 2     Category 2        0.212       0.212             0.000            0.007
+     GA33K          GA33L
+       Category 1     Category 1        0.093       0.093             0.000           -0.011
+       Category 1     Category 2        0.257       0.256             0.000            0.011
+       Category 2     Category 1        0.172       0.173            -0.001           -0.019
+       Category 2     Category 2        0.478       0.478             0.000            0.011
+
+
+     UNIVARIATE DISTRIBUTION FIT FOR CLASS 2
+
+     Variable          Observed      Estimated      Residual (Obs.-Est.)    Stand. Residual
+     GA33A
+       Category 1        0.893          0.893                  0.000                0.000
+       Category 2        0.107          0.107                  0.000                0.000
+     GA33H
+       Category 1        0.434          0.434                  0.000                0.000
+       Category 2        0.566          0.566                  0.000                0.000
+     GA33I
+       Category 1        0.254          0.254                  0.000                0.000
+       Category 2        0.746          0.746                  0.000                0.000
+     GA33K
+       Category 1        0.747          0.747                  0.000                0.000
+       Category 2        0.253          0.253                  0.000                0.000
+     GA33L
+       Category 1        0.827          0.827                  0.000                0.000
+       Category 2        0.173          0.173                  0.000                0.000
+
+
+     BIVARIATE DISTRIBUTIONS FIT FOR CLASS 2
+
+     Variable       Variable          Observed     Estimated    Residual (Obs.-Est.)  Stand. Residual
+     GA33A          GA33H
+       Category 1     Category 1        0.386       0.388            -0.002           -0.043
+       Category 1     Category 2        0.506       0.505             0.000            0.011
+       Category 2     Category 1        0.047       0.046             0.000            0.024
+       Category 2     Category 2        0.061       0.061             0.001            0.044
+     GA33A          GA33I
+       Category 1     Category 1        0.226       0.227            -0.001           -0.021
+       Category 1     Category 2        0.666       0.666             0.000           -0.001
+       Category 2     Category 1        0.027       0.027             0.000            0.010
+       Category 2     Category 2        0.080       0.080             0.001            0.028
+     GA33A          GA33K
+       Category 1     Category 1        0.669       0.667             0.002            0.059
+       Category 1     Category 2        0.224       0.226            -0.002           -0.053
+       Category 2     Category 1        0.080       0.080             0.000           -0.005
+       Category 2     Category 2        0.027       0.027             0.000           -0.026
+     GA33A          GA33L
+       Category 1     Category 1        0.738       0.738            -0.001           -0.022
+       Category 1     Category 2        0.155       0.155             0.001            0.029
+       Category 2     Category 1        0.088       0.089             0.000           -0.006
+       Category 2     Category 2        0.019       0.019             0.000            0.008
+     GA33H          GA33I
+       Category 1     Category 1        0.111       0.110             0.001            0.049
+       Category 1     Category 2        0.324       0.324             0.000            0.006
+       Category 2     Category 1        0.145       0.144             0.001            0.032
+       Category 2     Category 2        0.420       0.422            -0.002           -0.059
+     GA33H          GA33K
+       Category 1     Category 1        0.325       0.324             0.001            0.023
+       Category 1     Category 2        0.110       0.110             0.000           -0.005
+       Category 2     Category 1        0.423       0.423             0.000           -0.002
+       Category 2     Category 2        0.142       0.143            -0.001           -0.023
+     GA33H          GA33L
+       Category 1     Category 1        0.360       0.359             0.001            0.038
+       Category 1     Category 2        0.075       0.075             0.000           -0.024
+       Category 2     Category 1        0.468       0.468             0.000            0.001
+       Category 2     Category 2        0.097       0.098            -0.001           -0.042
+     GA33I          GA33K
+       Category 1     Category 1        0.188       0.190            -0.002           -0.058
+       Category 1     Category 2        0.063       0.064            -0.001           -0.066
+       Category 2     Category 1        0.561       0.557             0.003            0.086
+       Category 2     Category 2        0.188       0.189             0.000           -0.010
+     GA33I          GA33L
+       Category 1     Category 1        0.209       0.210            -0.001           -0.037
+       Category 1     Category 2        0.043       0.044            -0.001           -0.032
+       Category 2     Category 1        0.619       0.617             0.002            0.062
+       Category 2     Category 2        0.129       0.129            -0.001           -0.024
+     GA33K          GA33L
+       Category 1     Category 1        0.619       0.618             0.001            0.022
+       Category 1     Category 2        0.130       0.129             0.000            0.014
+       Category 2     Category 1        0.208       0.209            -0.001           -0.034
+       Category 2     Category 2        0.044       0.044             0.000           -0.010
+
+
+     UNIVARIATE DISTRIBUTION FIT FOR CLASS 3
+
+     Variable          Observed      Estimated      Residual (Obs.-Est.)    Stand. Residual
+     GA33A
+       Category 1        0.759          0.759                  0.000                0.000
+       Category 2        0.241          0.241                  0.000                0.000
+     GA33H
+       Category 1        1.000          1.000                  0.000                0.000
+       Category 2        0.000          0.000                  0.000                0.000
+     GA33I
+       Category 1        0.904          0.904                  0.000                0.000
+       Category 2        0.096          0.096                  0.000                0.000
+     GA33K
+       Category 1        0.947          0.947                  0.000                0.000
+       Category 2        0.053          0.053                  0.000                0.000
+     GA33L
+       Category 1        1.000          1.000                  0.000               -0.009
+       Category 2        0.000          0.000                  0.000                0.009
+
+
+     BIVARIATE DISTRIBUTIONS FIT FOR CLASS 3
+
+     Variable       Variable          Observed     Estimated    Residual (Obs.-Est.)  Stand. Residual
+     GA33A          GA33H
+       Category 1     Category 1        0.760       0.759             0.002            0.100
+       Category 1     Category 2        0.000       0.000             0.000           -0.001
+       Category 2     Category 1        0.240       0.241            -0.002           -0.100
+       Category 2     Category 2        0.000       0.000             0.000            0.000
+     GA33A          GA33I
+       Category 1     Category 1        0.685       0.686            -0.001           -0.078
+       Category 1     Category 2        0.072       0.073             0.000           -0.028
+       Category 2     Category 1        0.220       0.218             0.001            0.097
+       Category 2     Category 2        0.023       0.023             0.000            0.022
+     GA33A          GA33K
+       Category 1     Category 1        0.719       0.719             0.001            0.042
+       Category 1     Category 2        0.039       0.040            -0.001           -0.086
+       Category 2     Category 1        0.229       0.229             0.000            0.008
+       Category 2     Category 2        0.013       0.013             0.000           -0.050
+     GA33A          GA33L
+       Category 1     Category 1        0.758       0.759             0.000           -0.031
+       Category 1     Category 2        0.000       0.000             0.000            0.006
+       Category 2     Category 1        0.242       0.241             0.000            0.031
+       Category 2     Category 2        0.000       0.000             0.000            0.002
+     GA33H          GA33I
+       Category 1     Category 1        0.905       0.904             0.001            0.059
+       Category 1     Category 2        0.095       0.096            -0.001           -0.059
+       Category 2     Category 1        0.000       0.000             0.000            0.000
+       Category 2     Category 2        0.000       0.000             0.000            0.000
+     GA33H          GA33K
+       Category 1     Category 1        0.948       0.947             0.000            0.046
+       Category 1     Category 2        0.052       0.053             0.000           -0.046
+       Category 2     Category 1        0.000       0.000             0.000            0.000
+       Category 2     Category 2        0.000       0.000             0.000            0.000
+     GA33H          GA33L
+       Category 1     Category 1        1.000       1.000             0.000           -0.004
+       Category 1     Category 2        0.000       0.000             0.000            0.008
+       Category 2     Category 1        0.000       0.000             0.000            0.000
+       Category 2     Category 2        0.000       0.000             0.000            0.000
+     GA33I          GA33K
+       Category 1     Category 1        0.856       0.857            -0.001           -0.066
+       Category 1     Category 2        0.048       0.048             0.000            0.058
+       Category 2     Category 1        0.091       0.091             0.000            0.031
+       Category 2     Category 2        0.005       0.005             0.000            0.028
+     GA33I          GA33L
+       Category 1     Category 1        0.904       0.904             0.000           -0.011
+       Category 1     Category 2        0.000       0.000             0.000            0.008
+       Category 2     Category 1        0.096       0.096             0.000            0.011
+       Category 2     Category 2        0.000       0.000             0.000            0.001
+     GA33K          GA33L
+       Category 1     Category 1        0.947       0.947             0.000           -0.013
+       Category 1     Category 2        0.000       0.000             0.000            0.008
+       Category 2     Category 1        0.053       0.053             0.000            0.013
+       Category 2     Category 2        0.000       0.000             0.000            0.000
+
+
+     UNIVARIATE DISTRIBUTION FIT FOR CLASS 4
+
+     Variable          Observed      Estimated      Residual (Obs.-Est.)    Stand. Residual
+     GA33A
+       Category 1        0.002          0.002                  0.000                0.000
+       Category 2        0.998          0.998                  0.000                0.000
+     GA33H
+       Category 1        0.565          0.565                  0.000                0.000
+       Category 2        0.435          0.435                  0.000                0.000
+     GA33I
+       Category 1        0.000          0.000                  0.000                0.004
+       Category 2        1.000          1.000                  0.000               -0.004
+     GA33K
+       Category 1        0.756          0.756                  0.000                0.000
+       Category 2        0.244          0.244                  0.000                0.000
+     GA33L
+       Category 1        0.694          0.694                  0.000                0.000
+       Category 2        0.306          0.306                  0.000                0.000
+
+
+     BIVARIATE DISTRIBUTIONS FIT FOR CLASS 4
+
+     Variable       Variable          Observed     Estimated    Residual (Obs.-Est.)  Stand. Residual
+     GA33A          GA33H
+       Category 1     Category 1        0.001       0.001             0.000           -0.010
+       Category 1     Category 2        0.001       0.001             0.000           -0.006
+       Category 2     Category 1        0.562       0.564            -0.002           -0.051
+       Category 2     Category 2        0.436       0.434             0.002            0.052
+     GA33A          GA33I
+       Category 1     Category 1        0.000       0.000             0.000            0.000
+       Category 1     Category 2        0.002       0.002             0.000           -0.004
+       Category 2     Category 1        0.000       0.000             0.000            0.004
+       Category 2     Category 2        0.998       0.998             0.000            0.004
+     GA33A          GA33K
+       Category 1     Category 1        0.001       0.001             0.000            0.008
+       Category 1     Category 2        0.000       0.000             0.000           -0.001
+       Category 2     Category 1        0.758       0.755             0.003            0.106
+       Category 2     Category 2        0.240       0.243            -0.003           -0.107
+     GA33A          GA33L
+       Category 1     Category 1        0.001       0.001             0.000           -0.001
+       Category 1     Category 2        0.001       0.001             0.000            0.001
+       Category 2     Category 1        0.691       0.693            -0.001           -0.043
+       Category 2     Category 2        0.307       0.305             0.001            0.043
+     GA33H          GA33I
+       Category 1     Category 1        0.000       0.000             0.000            0.003
+       Category 1     Category 2        0.565       0.565            -0.001           -0.017
+       Category 2     Category 1        0.000       0.000             0.000            0.002
+       Category 2     Category 2        0.435       0.435             0.001            0.017
+     GA33H          GA33K
+       Category 1     Category 1        0.426       0.427            -0.001           -0.030
+       Category 1     Category 2        0.138       0.138             0.001            0.023
+       Category 2     Category 1        0.329       0.329             0.000           -0.004
+       Category 2     Category 2        0.107       0.106             0.001            0.028
+     GA33H          GA33L
+       Category 1     Category 1        0.393       0.392             0.001            0.026
+       Category 1     Category 2        0.172       0.173             0.000           -0.015
+       Category 2     Category 1        0.302       0.302             0.000           -0.001
+       Category 2     Category 2        0.133       0.133             0.000           -0.020
+     GA33I          GA33K
+       Category 1     Category 1        0.000       0.000             0.000            0.003
+       Category 1     Category 2        0.000       0.000             0.000            0.001
+       Category 2     Category 1        0.757       0.756             0.001            0.026
+       Category 2     Category 2        0.243       0.244            -0.001           -0.026
+     GA33I          GA33L
+       Category 1     Category 1        0.000       0.000             0.000            0.003
+       Category 1     Category 2        0.000       0.000             0.000            0.001
+       Category 2     Category 1        0.695       0.694             0.001            0.038
+       Category 2     Category 2        0.305       0.306            -0.001           -0.038
+     GA33K          GA33L
+       Category 1     Category 1        0.523       0.525            -0.002           -0.053
+       Category 1     Category 2        0.233       0.231             0.002            0.063
+       Category 2     Category 1        0.169       0.169            -0.001           -0.023
+       Category 2     Category 2        0.075       0.075             0.001            0.033
+
+
+     UNIVARIATE DISTRIBUTION FIT FOR CLASS 5
+
+     Variable          Observed      Estimated      Residual (Obs.-Est.)    Stand. Residual
+     GA33A
+       Category 1        0.345          0.345                  0.000                0.000
+       Category 2        0.655          0.655                  0.000                0.000
+     GA33H
+       Category 1        0.583          0.583                  0.000                0.000
+       Category 2        0.417          0.417                  0.000                0.000
+     GA33I
+       Category 1        0.986          0.986                  0.000                0.000
+       Category 2        0.014          0.014                  0.000                0.000
+     GA33K
+       Category 1        0.811          0.811                  0.000                0.000
+       Category 2        0.189          0.189                  0.000                0.000
+     GA33L
+       Category 1        0.714          0.714                  0.000                0.000
+       Category 2        0.286          0.286                  0.000                0.000
+
+
+     BIVARIATE DISTRIBUTIONS FIT FOR CLASS 5
+
+     Variable       Variable          Observed     Estimated    Residual (Obs.-Est.)  Stand. Residual
+     GA33A          GA33H
+       Category 1     Category 1        0.201       0.201             0.000            0.008
+       Category 1     Category 2        0.143       0.144            -0.001           -0.020
+       Category 2     Category 1        0.384       0.382             0.002            0.045
+       Category 2     Category 2        0.272       0.273            -0.001           -0.041
+     GA33A          GA33I
+       Category 1     Category 1        0.339       0.340            -0.001           -0.041
+       Category 1     Category 2        0.005       0.005             0.000           -0.003
+       Category 2     Category 1        0.647       0.646             0.001            0.040
+       Category 2     Category 2        0.009       0.009             0.000            0.005
+     GA33A          GA33K
+       Category 1     Category 1        0.278       0.280            -0.002           -0.062
+       Category 1     Category 2        0.065       0.065            -0.001           -0.031
+       Category 2     Category 1        0.533       0.531             0.002            0.058
+       Category 2     Category 2        0.124       0.124             0.001            0.021
+     GA33A          GA33L
+       Category 1     Category 1        0.246       0.246             0.000           -0.007
+       Category 1     Category 2        0.099       0.099             0.001            0.034
+       Category 2     Category 1        0.466       0.468            -0.001           -0.038
+       Category 2     Category 2        0.188       0.187             0.001            0.031
+     GA33H          GA33I
+       Category 1     Category 1        0.575       0.575             0.000            0.006
+       Category 1     Category 2        0.008       0.008             0.000           -0.003
+       Category 2     Category 1        0.411       0.411             0.000           -0.005
+       Category 2     Category 2        0.006       0.006             0.000           -0.004
+     GA33H          GA33K
+       Category 1     Category 1        0.473       0.473             0.000            0.009
+       Category 1     Category 2        0.111       0.110             0.001            0.024
+       Category 2     Category 1        0.337       0.338            -0.001           -0.029
+       Category 2     Category 2        0.079       0.079             0.000            0.006
+     GA33H          GA33L
+       Category 1     Category 1        0.418       0.416             0.002            0.061
+       Category 1     Category 2        0.169       0.167             0.002            0.067
+       Category 2     Category 1        0.294       0.298            -0.003           -0.100
+       Category 2     Category 2        0.119       0.119            -0.001           -0.029
+     GA33I          GA33K
+       Category 1     Category 1        0.800       0.800             0.000            0.013
+       Category 1     Category 2        0.186       0.186             0.000           -0.014
+       Category 2     Category 1        0.011       0.011             0.000            0.003
+       Category 2     Category 2        0.003       0.003             0.000            0.000
+     GA33I          GA33L
+       Category 1     Category 1        0.705       0.704             0.001            0.032
+       Category 1     Category 2        0.281       0.282            -0.001           -0.036
+       Category 2     Category 1        0.010       0.010             0.000            0.012
+       Category 2     Category 2        0.004       0.004             0.000            0.002
+     GA33K          GA33L
+       Category 1     Category 1        0.580       0.579             0.001            0.026
+       Category 1     Category 2        0.232       0.232             0.000            0.002
+       Category 2     Category 1        0.134       0.135            -0.001           -0.027
+       Category 2     Category 2        0.054       0.054             0.000           -0.020
+
+
+     UNIVARIATE DISTRIBUTION FIT FOR CLASS 6
+
+     Variable          Observed      Estimated      Residual (Obs.-Est.)    Stand. Residual
+     GA33A
+       Category 1        0.105          0.105                  0.000                0.000
+       Category 2        0.895          0.895                  0.000                0.000
+     GA33H
+       Category 1        0.069          0.069                  0.000                0.000
+       Category 2        0.931          0.931                  0.000                0.000
+     GA33I
+       Category 1        0.064          0.064                  0.000                0.000
+       Category 2        0.936          0.936                  0.000                0.000
+     GA33K
+       Category 1        0.069          0.069                  0.000                0.000
+       Category 2        0.931          0.931                  0.000                0.000
+     GA33L
+       Category 1        0.070          0.070                  0.000                0.000
+       Category 2        0.930          0.930                  0.000                0.000
+
+
+     BIVARIATE DISTRIBUTIONS FIT FOR CLASS 6
+
+     Variable       Variable          Observed     Estimated    Residual (Obs.-Est.)  Stand. Residual
+     GA33A          GA33H
+       Category 1     Category 1        0.007       0.007             0.000            0.003
+       Category 1     Category 2        0.098       0.097             0.000            0.011
+       Category 2     Category 1        0.062       0.062             0.000            0.001
+       Category 2     Category 2        0.833       0.833             0.000           -0.010
+     GA33A          GA33I
+       Category 1     Category 1        0.007       0.007             0.000            0.022
+       Category 1     Category 2        0.099       0.098             0.001            0.061
+       Category 2     Category 1        0.057       0.057             0.000            0.013
+       Category 2     Category 2        0.837       0.838            -0.001           -0.063
+     GA33A          GA33K
+       Category 1     Category 1        0.007       0.007             0.000            0.015
+       Category 1     Category 2        0.098       0.097             0.001            0.052
+       Category 2     Category 1        0.061       0.061             0.000            0.011
+       Category 2     Category 2        0.833       0.834            -0.001           -0.052
+     GA33A          GA33L
+       Category 1     Category 1        0.007       0.007             0.000            0.000
+       Category 1     Category 2        0.097       0.097             0.000           -0.001
+       Category 2     Category 1        0.063       0.063             0.000           -0.004
+       Category 2     Category 2        0.833       0.833             0.000            0.004
+     GA33H          GA33I
+       Category 1     Category 1        0.004       0.004             0.000            0.011
+       Category 1     Category 2        0.065       0.065             0.000            0.014
+       Category 2     Category 1        0.060       0.059             0.000            0.031
+       Category 2     Category 2        0.871       0.871             0.000           -0.034
+     GA33H          GA33K
+       Category 1     Category 1        0.005       0.005             0.000            0.002
+       Category 1     Category 2        0.065       0.065             0.000            0.052
+       Category 2     Category 1        0.063       0.064             0.000           -0.043
+       Category 2     Category 2        0.867       0.867             0.000           -0.007
+     GA33H          GA33L
+       Category 1     Category 1        0.005       0.005             0.000            0.014
+       Category 1     Category 2        0.065       0.064             0.000            0.025
+       Category 2     Category 1        0.066       0.065             0.000            0.024
+       Category 2     Category 2        0.865       0.865             0.000           -0.038
+     GA33I          GA33K
+       Category 1     Category 1        0.004       0.004             0.000           -0.005
+       Category 1     Category 2        0.059       0.059             0.000           -0.054
+       Category 2     Category 1        0.065       0.064             0.001            0.057
+       Category 2     Category 2        0.872       0.872             0.000           -0.003
+     GA33I          GA33L
+       Category 1     Category 1        0.004       0.004             0.000           -0.035
+       Category 1     Category 2        0.058       0.059            -0.001           -0.118
+       Category 2     Category 1        0.066       0.066             0.000           -0.015
+       Category 2     Category 2        0.872       0.870             0.001            0.101
+     GA33K          GA33L
+       Category 1     Category 1        0.005       0.005             0.000           -0.002
+       Category 1     Category 2        0.064       0.064             0.000            0.007
+       Category 2     Category 1        0.065       0.065             0.000           -0.015
+       Category 2     Category 2        0.866       0.866             0.000            0.006
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 1
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 2
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 3
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 4
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 5
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS 6
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS INDICATOR MODEL PART
+
+
+           TAU(U) FOR LATENT CLASS 1
+              GA33A$1       GA33H$1       GA33I$1       GA33K$1       GA33L$1
+              ________      ________      ________      ________      ________
+                    1             2             3             4             5
+
+
+           TAU(U) FOR LATENT CLASS 2
+              GA33A$1       GA33H$1       GA33I$1       GA33K$1       GA33L$1
+              ________      ________      ________      ________      ________
+                    6             7             8             9            10
+
+
+           TAU(U) FOR LATENT CLASS 3
+              GA33A$1       GA33H$1       GA33I$1       GA33K$1       GA33L$1
+              ________      ________      ________      ________      ________
+                   11            12            13            14            15
+
+
+           TAU(U) FOR LATENT CLASS 4
+              GA33A$1       GA33H$1       GA33I$1       GA33K$1       GA33L$1
+              ________      ________      ________      ________      ________
+                   16            17            18            19            20
+
+
+           TAU(U) FOR LATENT CLASS 5
+              GA33A$1       GA33H$1       GA33I$1       GA33K$1       GA33L$1
+              ________      ________      ________      ________      ________
+                   21            22            23            24            25
+
+
+           TAU(U) FOR LATENT CLASS 6
+              GA33A$1       GA33H$1       GA33I$1       GA33K$1       GA33L$1
+              ________      ________      ________      ________      ________
+                   26            27            28            29            30
+
+
+     PARAMETER SPECIFICATION FOR LATENT CLASS REGRESSION MODEL PART
+
+
+           ALPHA(C)
+              C#1           C#2           C#3           C#4           C#5
+              ________      ________      ________      ________      ________
+                   31            32            33            34            35
+
+
+           ALPHA(C)
+              C#6
+              ________
+                    0
+
+
+     STARTING VALUES FOR LATENT CLASS 1
+
+
+     STARTING VALUES FOR LATENT CLASS 2
+
+
+     STARTING VALUES FOR LATENT CLASS 3
+
+
+     STARTING VALUES FOR LATENT CLASS 4
+
+
+     STARTING VALUES FOR LATENT CLASS 5
+
+
+     STARTING VALUES FOR LATENT CLASS 6
+
+
+     STARTING VALUES FOR LATENT CLASS INDICATOR MODEL PART
+
+
+           TAU(U) FOR LATENT CLASS 1
+              GA33A$1       GA33H$1       GA33I$1       GA33K$1       GA33L$1
+              ________      ________      ________      ________      ________
+               -2.306        -1.710        -2.035        -1.683        -1.659
+
+
+           TAU(U) FOR LATENT CLASS 2
+              GA33A$1       GA33H$1       GA33I$1       GA33K$1       GA33L$1
+              ________      ________      ________      ________      ________
+               -1.306        -0.710        -1.035        -0.683        -0.659
+
+
+           TAU(U) FOR LATENT CLASS 3
+              GA33A$1       GA33H$1       GA33I$1       GA33K$1       GA33L$1
+              ________      ________      ________      ________      ________
+               -0.306         0.290        -0.035         0.317         0.341
+
+
+           TAU(U) FOR LATENT CLASS 4
+              GA33A$1       GA33H$1       GA33I$1       GA33K$1       GA33L$1
+              ________      ________      ________      ________      ________
+               -0.306         0.290        -0.035         0.317         0.341
+
+
+           TAU(U) FOR LATENT CLASS 5
+              GA33A$1       GA33H$1       GA33I$1       GA33K$1       GA33L$1
+              ________      ________      ________      ________      ________
+                0.694         1.290         0.965         1.317         1.341
+
+
+           TAU(U) FOR LATENT CLASS 6
+              GA33A$1       GA33H$1       GA33I$1       GA33K$1       GA33L$1
+              ________      ________      ________      ________      ________
+                1.694         2.290         1.965         2.317         2.341
+
+
+     STARTING VALUES FOR LATENT CLASS REGRESSION MODEL PART
+
+
+           ALPHA(C)
+              C#1           C#2           C#3           C#4           C#5
+              ________      ________      ________      ________      ________
+                0.000         0.000         0.000         0.000         0.000
+
+
+           ALPHA(C)
+              C#6
+              ________
+                0.000
+
+
+TECHNICAL 11 OUTPUT
+
+     Random Starts Specifications for the k-1 Class Analysis Model
+        Number of initial stage random starts                 500
+        Number of final stage optimizations                   100
+
+
+
+     VUONG-LO-MENDELL-RUBIN LIKELIHOOD RATIO TEST FOR 5 (H0) VERSUS 6 CLASSES
+
+          H0 Loglikelihood Value                        -5877.597
+          2 Times the Loglikelihood Difference              1.051
+          Difference in the Number of Parameters                6
+          Mean                                            -27.629
+          Standard Deviation                               43.350
+          P-Value                                          0.1656
+
+     LO-MENDELL-RUBIN ADJUSTED LRT TEST
+
+          Value                                             1.028
+          P-Value                                          0.1665
+
+
+TECHNICAL 14 OUTPUT
+
+     Random Starts Specifications for the k-1 Class Analysis Model
+        Number of initial stage random starts                 500
+        Number of final stage optimizations                   100
+
+     Random Starts Specification for the k-1 Class Model for Generated Data
+        Number of initial stage random starts                   0
+        Number of final stage optimizations for the
+           initial stage random starts                          0
+     Random Starts Specification for the k Class Model for Generated Data
+        Number of initial stage random starts                  40
+        Number of final stage optimizations                     8
+     Number of bootstrap draws requested                   Varies
+
+
+     PARAMETRIC BOOTSTRAPPED LIKELIHOOD RATIO TEST FOR 5 (H0) VERSUS 6 CLASSES
+
+          H0 Loglikelihood Value                        -5877.597
+          2 Times the Loglikelihood Difference              1.051
+          Difference in the Number of Parameters                6
+          Approximate P-Value                              1.0000
+          Successful Bootstrap Draws                            2
+
+
+PLOT INFORMATION
+
+The following plots are available:
+
+  Histograms (sample values)
+  Scatterplots (sample values)
+  Sample proportions and estimated probabilities
+
+     Beginning Time:  09:12:09
+        Ending Time:  09:12:10
+       Elapsed Time:  00:00:01
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2021 Muthen & Muthen

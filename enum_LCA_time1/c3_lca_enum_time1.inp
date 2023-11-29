@@ -1,0 +1,27 @@
+TITLE:
+Class-3_Time1
+DATA:
+FILE = "/Users/agarber/github/Intro-to-LTA/enum_LCA_time1/t1.dat";
+ 
+VARIABLE:
+NAMES = AB39M AB39T AB39U AB39W AB39X GA33A GA33H GA33I GA33K GA33L ENGINEER MATHG7
+     MATHG8 MATHG10 MATHG11 MATHG12 FEMALE KA9B KA9C KA9D KA9G KA9K CPROB11 CPROB12
+     CPROB13 CPROB14 CMOD1 CASENUM COHORT SOCISS2 OPKNOW2 SIOK2 CPROB21 CPROB22
+     CPROB23 CPROB24 CMOD2; 
+ MISSING=.;
+ !!! NOTE CHANGE: List of the five 7th grade science attitude indicators !!!
+categorical = ab39m-ab39x; 
+     usevar = ab39m-ab39x;
+     
+classes = c(3);
+ANALYSIS:
+estimator = mlr; 
+      type = mixture;
+      !!! NOTE CHANGE: The intial and final start values. Reduce to speed up estimation time. !!!
+      starts = 500 100;           
+      processors = 10;
+OUTPUT:
+sampstat residual tech11 tech14;
+PLOT:
+type = plot3; 
+      series = ab39m-ab39x(*);
